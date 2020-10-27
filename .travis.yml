@@ -1,7 +1,17 @@
 language: python
 python:
+
     - "3.6"
+
 before_install:
+
     - pip install pytest pytest-cov
+    - pip install codecov
+
 script:
-    - pytest
+
+    - pytest --cov=./
+
+after_success:
+
+    - codecov
